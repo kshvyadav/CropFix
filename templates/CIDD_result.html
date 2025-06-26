@@ -1,0 +1,1058 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CROPFIX - Crop Identification and Disease Detection</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Genos:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link href="https://fonts.googleapis.com/css2?family=Anton+SC&family=Genos:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            
+        }
+
+        .navbar {
+            /* background-color: #333; */
+            font-family: "Anton SC", sans-serif;
+            overflow: hidden;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 10px 50px;
+        }
+
+        .navbar-left {
+            color: rgb(0, 0, 0);
+            font-size: 2vw;
+            font-weight: bold;
+        }
+
+        .navbar-right {
+            display: flex;
+        }
+
+        .navbar-right a {
+            color: rgb(0, 0, 0);
+            text-decoration: none;
+            padding: 10px 15px;
+            font-size: 1.2vw;
+        }
+
+        .navbar-right a:hover {
+            background-color: #000000;
+            color: white;
+            border-radius: 10px;
+        }
+  
+.top-container{
+    width: 100%;
+    height: 945px;
+    /* background-color: #56c31c; */
+    display: flex;
+}
+
+
+.txtbox{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+    width: 40%;
+    /* background-color: aqua; */
+}
+
+.txtbox h1{
+    position: absolute;
+    top: -40px;
+
+    font-family: "Anton SC", sans-serif;
+    font-size: 3vw;
+    text-align: right;
+    /* position: relative; */
+    display: inline;
+    left: 20px;
+}
+
+
+.txtbox h2{
+    font-family: "Anton SC", sans-serif;
+    font-size: 8vw;
+
+    text-align: right;
+
+}
+          
+.imgslider {
+            display: flex;
+            align-items: center;
+            width: 60%;
+            /* height: 400px; */
+            padding: 40px;
+            /* border-radius: 100px; */
+           
+        }
+        
+
+.image-slider {
+        position: relative;
+        width: 100%;
+        height: 600px;
+        margin: 0 auto;
+    }
+    
+    .slides {
+        position: relative;
+        width: 100%;
+        height: 100%;
+    }
+    
+    .slides img {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        display: none;
+        border-radius: 100px;
+    }
+
+    .slides img.active {
+        display: block;
+    }
+
+    .prev-next-btns {
+        position: absolute;
+        top: 50%;
+        transform: translateY(-50%);
+        width: 100%;
+        display: flex;
+        justify-content: space-between;
+    }
+    
+    .prev-btn, .next-btn {
+        border-radius: 40px;
+        background-color: #ffffff83;
+        border: none;
+        padding: 20px 20px;
+        margin: 10px;
+        font-size: 16px;
+        cursor: pointer;
+    }
+
+    .dots-container {
+        position: absolute;
+        bottom: 20px;
+        left: 50%;
+        transform: translateX(-50%);
+        display: flex;
+        gap: 10px;
+    }
+
+    .dot {
+        width: 10px;
+        height: 10px;
+        background-color: #ffffff4f;
+        border-radius: 50%;
+        cursor: pointer;
+    }
+
+    .dot.active {
+        background-color: #000;
+    }
+
+
+
+.mid-container{
+    width: 100%;
+    height: 100%;
+    /* background-color: aqua; */
+}
+
+.infobox{
+    position: relative;
+    left: 12.5%;
+    background-color: rgb(0, 0, 0);
+    color: #fff;
+    height: 100%;
+    width: 75%;
+    border-radius: 50px;
+    padding: 20px;
+}
+
+
+.innerandimg{
+  margin-top: 20px;
+  margin-left: 20px;
+  display: flex;
+}
+
+.innerbox{
+  width: 70%;
+}
+
+.innerbox h1{
+    position: relative;
+    top: 20px;
+    display: inline;
+    font-family: "Anton SC", sans-serif;
+    font-size: 3vw;
+    /* margin-left: 50px; */
+}
+
+
+.innerbox h2{
+    /* position: relative; */
+    top: 50px;
+    font-family: "inter", sans-serif;
+    font-size: 35px;
+    margin-left: 50px;
+    text-align: justify;
+    width: 90%;
+        }
+
+.inputimg{
+    /* background-color: #ffffff; */
+    height: 550px;
+    width: 400px;
+    border-radius: 30px;
+}
+
+.inputimg  img {
+    width: 90%;
+    margin-left: 5%;
+    margin-top: 5%;
+    height: 65%;
+    border-radius: 30px;
+}
+
+.inputimg p{
+    /* text-align: right; */
+    color: black;
+    font-family: "Anton SC", sans-serif;
+    font-size: 30px;
+    margin-left: 20px;
+}
+
+.custum-file-upload {
+  height: 20px;
+  width: 150px;
+  display: flex;
+  flex-direction: column;
+  align-items: space-between;
+  gap: 20px;
+  cursor: pointer;
+  align-items: center;
+  justify-content: center;
+  /* border: 2px dashed #cacaca; */
+  /* background-color: rgb(0, 0, 0); */
+  /* color: #007bff; */
+  padding: 1.5rem;
+  border-radius: 10px;
+  /* box-shadow: 0px 48px 35px -48px rgba(0,0,0,0.1); */
+}
+
+.custum-file-upload .text {
+    position: relative;
+    top: 20px;
+    left: 130px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  appearance: button;
+  background-color: #ffffff;
+  background-image: none;
+  border: 1px solid #000;
+  border-radius: 4px;
+  box-shadow: #fff 4px 4px 0 0,#000 4px 4px 0 1px;
+  box-sizing: border-box;
+  color: #000000;
+  cursor: pointer;
+  display: inline-block;
+  font-family: ITCAvantGardeStd-Bk,Arial,sans-serif;
+  font-family: "Anton SC", sans-serif;
+  font-size: 25px;
+  font-weight: 400;
+  line-height: 20px;
+  margin: 0 5px 10px 0;
+  overflow: visible;
+  padding: 12px 40px;
+  text-align: center;
+  text-transform: none;
+  touch-action: manipulation;
+  user-select: none;
+  -webkit-user-select: none;
+  vertical-align: middle;
+  white-space: nowrap;
+}
+
+.custum-file-upload .text span {
+  font-weight: 400;
+  color: rgb(0, 0, 0);
+}
+
+
+.custum-file-upload input {
+  display: none;
+}
+
+.custum-file-upload .text:focus {
+  text-decoration: none;
+}
+
+.custum-file-upload .text:hover {
+  text-decoration: none;
+}
+
+.custum-file-upload .text:active {
+  box-shadow: rgba(0, 0, 0, .125) 0 3px 5px inset;
+  outline: 0;
+}
+
+.custum-file-upload .text:not([disabled]):active {
+  box-shadow: #fff 2px 2px 0 0, #000 2px 2px 0 1px;
+  transform: translate(2px, 2px);
+}
+
+
+.UAA {
+      position: relative;
+      left: 200px;
+      top: 20px;
+  appearance: button;
+  background-color: #ffffff;
+  background-image: none;
+  border: 1px solid #000;
+  border-radius: 4px;
+  box-shadow: #fff 4px 4px 0 0,#000 4px 4px 0 1px;
+  box-sizing: border-box;
+  color: #000000;
+  cursor: pointer;
+  display: inline-block;
+  font-family: ITCAvantGardeStd-Bk,Arial,sans-serif;
+  font-family: "Anton SC", sans-serif;
+  font-size: 25px;
+  font-weight: 400;
+  line-height: 20px;
+  margin: 0 5px 10px 0;
+  overflow: visible;
+  padding: 12px 40px;
+  text-align: center;
+  text-transform: none;
+  touch-action: manipulation;
+  user-select: none;
+  -webkit-user-select: none;
+  vertical-align: middle;
+  white-space: nowrap;
+}
+
+.UAA:focus {
+  text-decoration: none;
+}
+
+.UAA:hover {
+  text-decoration: none;
+}
+
+.UAA:active {
+  box-shadow: rgba(0, 0, 0, .125) 0 3px 5px inset;
+  outline: 0;
+}
+
+.UAA:not([disabled]):active {
+  box-shadow: #fff 2px 2px 0 0, #000 2px 2px 0 1px;
+  transform: translate(2px, 2px);
+}
+
+.sympbox{
+    /* background-color: #5a5a6e; */
+    margin-top: 20px;
+    margin-left: 20px;
+}
+
+.sympbox h1{
+    display: inline;
+    font-family: "Anton SC", sans-serif;
+    font-size: 4vw;
+}
+
+
+.sympbox p{
+        font-family: "inter", sans-serif;
+        font-size: 25px;
+        margin-left: 50px;
+        text-align: justify;
+        width: 90%;
+        }
+
+
+.rbox{
+    background-color: #333;
+    margin-top: 50px;
+    margin-left: 20px;
+    border-radius: 50px;
+    width: 97%;
+}
+
+
+.rbox h1{
+    display: inline;
+    font-family: "Anton SC", sans-serif;
+    font-size: 4vw;
+    margin-left: 30px;
+    position: relative;
+    top: 20px;
+}
+
+.rbox h2{
+    position: relative;
+    top: -50px;    
+    left: 50px;
+    font-family: "Anton SC", sans-serif;
+    font-size: 3vw;
+}
+
+.rbox p{
+        font-family: "inter", sans-serif;
+        font-size: 25px;
+        position: relative;
+        top: -80px;
+        text-align: justify;
+        width: 90%;
+        margin-left: 50px;
+        }
+
+.preventbox{
+    /* background-color: #5a5a6e; */
+    /* margin-top: 20px; */
+    margin-left: 20px;
+}
+
+.preventbox h1{
+    display: inline;
+    font-family: "Anton SC", sans-serif;
+    font-size: 4vw;
+}
+
+
+.preventbox p{
+        font-family: "inter", sans-serif;
+        font-size: 25px;
+        margin-left: 50px;
+        text-align: justify;
+        width: 90%;
+        }
+
+.feedback-container{
+    /* background-color: aqua; */
+    height: 100%;
+}
+
+.feedback-form-container{
+    display: flex;
+    width: 80%;
+    margin: 50px auto;
+    /* border: 1px solid #ccc; */
+    padding: 20px;
+}
+
+.feedbacktxtbox{
+    flex: 1;
+    padding: 20px;
+    /* background-color: #f0f0f0; */
+}
+
+
+.feedbacktxtbox h2{
+            /* font-family: Arial, Helvetica, sans-serif; */
+            font-family: "Anton SC", sans-serif;
+            font-weight: 400;
+            font-size: 6vw;
+            /* font-weight: 400; */
+            /* font-weight: bold; */
+            line-height: 100%;
+            margin-left: 5vw;
+            text-align: right;
+            /* display: inline; */
+        }
+
+        .feedbacktxtbox p{
+            font-family: "inter", sans-serif;
+            position: relative;
+            top: -50px;
+            text-align: right;
+
+            padding-left: 5vw;
+            font-size: 25px;
+            line-height: 100%;
+        }
+
+        .vertical-line{
+            position: relative;
+            top: 50px;
+            width: 0.2%;
+            height: 600px;
+            background-color: #000;
+        }
+ 
+.feedback-form{
+    position: relative;
+    top: 130px;
+    flex: 1;
+    padding: 20px;
+}
+
+.form {
+  /* width: 340px; */
+  /* height: 440px; */
+  /* background: #e6e6e6; */
+  border-radius: 8px;
+  /* box-shadow: 0 0 40px -10px #000; */
+  /* margin: calc(50vh - 220px) auto; */
+  padding: 20px 30px;
+  /* max-width: calc(100vw - 40px); */
+  box-sizing: border-box;
+  /* font-family: "Montserrat", sans-serif; */
+  position: relative;
+}
+
+.form input {
+  width: 100%;
+  padding: 10px;
+  box-sizing: border-box;
+  background: none;
+  outline: none;
+  resize: none;
+  border: 0;
+  /* font-family: "Montserrat", sans-serif; */
+  transition: all 0.3s;
+  border-bottom: 2px solid #bebed2;
+}
+.form input:focus {
+  border-bottom: 2px solid #78788c;
+}
+
+.form p:before {
+  content: attr(type);
+  display: block;
+  margin: 28px 0 0;
+  font-size: 20px;
+  color: #5a5a5a;
+}
+.form button {
+  float: right;
+  padding: 8px 12px;
+  margin: 8px 0 0;
+  font-family: "Montserrat", sans-serif;
+  border: 2px solid #78788c;
+  background: 0;
+  color: #5a5a6e;
+  cursor: pointer;
+  transition: all 0.3s;
+}
+.form button:hover {
+  background: #78788c;
+  color: #fff;
+}
+
+  .button-50 {
+      /* position: relative; */
+      /* left: 530px; */
+      /* top: 20px; */
+  appearance: button;
+  background-color: #000;
+  background-image: none;
+  border: 1px solid #000;
+  border-radius: 4px;
+  box-shadow: #fff 4px 4px 0 0,#000 4px 4px 0 1px;
+  box-sizing: border-box;
+  color: #fff;
+  cursor: pointer;
+  display: inline-block;
+  font-family: ITCAvantGardeStd-Bk,Arial,sans-serif;
+  font-family: "Anton SC", sans-serif;
+  font-size: 25px;
+  font-weight: 400;
+  line-height: 20px;
+  margin: 0 5px 10px 0;
+  overflow: visible;
+  padding: 12px 40px;
+  text-align: center;
+  text-transform: none;
+  touch-action: manipulation;
+  user-select: none;
+  -webkit-user-select: none;
+  vertical-align: middle;
+  white-space: nowrap;
+}
+
+.button-50:focus {
+  text-decoration: none;
+}
+
+.button-50:hover {
+  text-decoration: none;
+}
+
+.button-50:active {
+  box-shadow: rgba(0, 0, 0, .125) 0 3px 5px inset;
+  outline: 0;
+}
+
+.button-50:not([disabled]):active {
+  box-shadow: #fff 2px 2px 0 0, #000 2px 2px 0 1px;
+  transform: translate(2px, 2px);
+}
+
+
+.feedback h1{
+            /* font-family: Arial, Helvetica, sans-serif; */
+            font-family: "Anton SC", sans-serif;
+            font-weight: 400;
+            font-size: 6vw;
+            /* font-weight: 400; */
+            /* font-weight: bold; */
+            line-height: 100%;
+            margin-left: 5vw;
+            /* display: inline; */
+        }
+
+        .feedback p{
+            font-family: "inter", sans-serif;
+            position: relative;
+            top: -50px;
+            padding-left: 5vw;
+            font-size: 25px;
+            line-height: 100%;
+        }
+
+        /* .feedbackh{
+            transform: translateY(100px);
+            opacity: 0;
+            transition: transform 1s ease, opacity 1s ease;
+        }
+
+        .feedbacksp{
+            transform: translateY(100px);
+            opacity: 0;
+            transition: transform 1s ease, opacity 1s ease;
+        } */
+        
+        .feedbackbox{
+            width: 100%;
+            height: 100%;
+            overflow: hidden;
+        }
+
+
+
+
+        .testimonial-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(500px, 1fr));
+  /* gap: 20px; */
+  padding: 20px;
+  height: 100%;
+
+}
+
+.testimonial {
+  background-color: #f0f0f0;
+  padding: 20px;
+  /* border-radius: 8px; */
+  /* box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); */
+}
+
+.testimonial p {
+    position: relative;
+    font-family: "inter", sans-serif;
+    top: -10px;
+    left: -70px;
+    height: 100px;
+    /* background-color: #007bff; */
+  /* background-color: #f0f0f0; */
+  /* padding: 20px; */
+  /* border-radius: 8px; */
+  /* box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); */
+}
+
+.testimonial .author {
+    position: relative;
+    bottom: 0px;
+  display: flex;
+  align-items: center;
+  margin-top: 20px;
+  /* background-color: #e00909; */
+}
+
+.testimonial .author .name {
+    font-family: "Anton SC", sans-serif;
+  /* font-weight: bold; */
+}
+
+
+        .fb1{
+            width: 33.12%;
+            height: 50%;
+            background-color: rgb(238, 238, 238);
+            /* border: 0.5px solid bl; */
+            /* border: 2px solid black; */
+            transition: transform 2s ease;
+        }
+
+        /* .fb1.slide-left {
+            transform: translateX(0);
+            opacity: 1;
+        }
+
+        .fb1:not(.slide-left) {
+            transform: translateX(-200px);
+            opacity: 0;
+        } */
+        .fb2{
+            width: 33.12%;
+            height: 50%;
+            background-color: rgba(209, 209, 209, 0.597);
+            /* border: 0.5px solid bl; */
+            /* border: 2px solid black; */
+        }
+
+        /* .fb2 {
+    transition: transform 2s ease;
+}
+
+.fb2.slide-right {
+    transform: translateX(0);
+    opacity: 1;
+}
+
+.fb2:not(.slide-right) {
+    transform: translateX(200px);
+    opacity: 0;
+} */
+
+.qa {
+  margin-top: 50px;
+  width: 97.9%;
+  height: auto;
+  background-color: rgb(0, 0, 0);
+  color: rgb(255, 255, 255); /* Set text color to white for the .qa section */
+  font-family: sans-serif;
+  padding: 20px;
+}
+
+.faq-container {
+
+  display: flex;
+  justify-content: space-between;
+  /* left: 20%; */
+  width: 60%;
+  margin: 100px;
+  position: relative;
+}
+
+.faq-left {
+  width: 30%;
+}
+
+.faq-left h1{
+    position: absolute;
+    top: -320px;
+    left: 100px;
+    font-family: "Anton SC", sans-serif;
+    font-weight: 400;
+    font-size: 15vw;
+}
+
+/* .faq-leftt{
+            transform: translateY(100px);
+            opacity: 0;
+            transition: transform 1s ease, opacity 1s ease;
+        } */
+
+.faq-left p{
+    position: absolute;
+    top: 300px;
+    left: 100px;
+}
+
+.faq-left a{
+    position: absolute;
+    top: 30px;
+    left: 0px;
+}
+
+.faq-right {
+    width: 65%;
+    position: relative;
+    left: 55%;
+}
+
+.faq-question {
+  border-bottom: 1px solid #333;
+  padding: 15px 0;
+  cursor: pointer;
+  position: relative;
+}
+
+.faq-question h3 {
+    margin: 0;
+    font-size: 18px;
+    display: inline-block;
+    font-family: "inter", sans-serif;
+}
+
+.faq-question .arrow {
+  position: absolute;
+  top: 50%;
+  right: 0;
+  transform: translateY(-50%);
+  width: 0;
+  height: 0;
+  border-left: 8px solid transparent;
+  border-right: 8px solid transparent;
+  border-top: 12px solid rgb(248, 248, 248);
+  transition: transform 0.3s ease;
+}
+
+.faq-question.open .arrow {
+  transform: translateY(-50%) rotate(180deg);
+}
+
+.faq-answer {
+  overflow: hidden;
+  max-height: 0;
+  transition: max-height 0.3s ease;
+  padding-top: 10px;
+  font-size: 16px;
+  line-height: 1.6;
+}
+
+.faq-answer.open {
+  max-height: 200px; /* Adjust as needed */
+}
+
+.contact-info {
+  margin-top: 20px;
+}
+
+.contact-info a {
+  color: #007bff;
+  text-decoration: none;
+}
+
+
+    </style>
+</head>
+<body>
+
+  <div class="navbar">
+    <div class="navbar-left">CropFix</div>
+    <div class="navbar-right">
+        <a href="/">Home</a>
+        <a href="/Crop-rcmd">Crop suggestion</a>
+        <a href="/CIDDL_input">Lime Explanation</a>
+    </div>
+</div>
+
+    <section class="top-container">
+        <div class="txtbox">
+        <!-- <h1>CropFix</h1> -->
+        <!-- <h2>Grape Black </h2> -->
+        <h2>{{ prediction }} {{ disease }}</h2>
+    </div>
+
+    <div class="imgslider">
+            <div class="image-slider">
+                <div class="slides">
+                    <img src="{{ image_1 }}" alt="Apple">
+                    <img src="{{ image_2 }}" alt="Apple">
+                    <img src="{{ image_3 }}" alt="Apple">
+                </div>
+                <div class="prev-next-btns">
+                    <button class="prev-btn">&#8592;</button>
+                    <button class="next-btn">&#8594;</button>
+                </div>
+                <div class="dots-container">
+                    <div class="dot active"></div>
+                    <div class="dot"></div>
+                    <div class="dot"></div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+</section>
+
+
+<section class="mid-container">
+    <div class="infobox">
+        <div class="innerandimg">
+          <div class="innerbox">
+            <h1>Crop Name</h1>
+            <h2>{{ prediction }}</h2>
+            <h1>Crop Disease</h1>
+            <h2>{{ disease }}</h2>
+            <h1>Disease Type</h1>
+            <h2>{{ dt }}</h2>
+        </div>
+            <div class="inputimg">
+                <img src="{{ url_for('static', filename='uploads/' + image_file) }}" alt="">
+                <form action="/uploadandanalysis" method="POST" enctype="multipart/form-data">
+                
+                <label class="custum-file-upload" for="file">
+                    <div class="text">
+                        <span>Choose another Image</span>
+                    </div>
+                    <input type="file" id="file" name="file" accept="image/*" required>
+                </label>
+                <button class="UAA" role="button" type="submit">Diagnosis</button>
+            </form>
+            </div>
+            
+        </div>
+        <div class="sympbox">
+            <h1>Symptoms</h1>
+            <p>{{ s }}</p>
+        </div>
+    <div class="rbox">
+        <h1> Recommendation</h1>
+        <h2 class="o_c">Organic control</h2>
+        <p class="ocinfo">{{ ocinfo }}</p>
+        <h2 class="cc">Chemical control</h2>
+        <p class="ccinfo">{{ ccinfo }}</p>
+    </div>
+    
+    <div class="preventbox">        
+        <h1>Preventive Measures</h1>
+        <p>{{ p_m }}</p>
+    </div>
+</div>
+</section>
+
+
+<section class="qa">
+    <div class="faq-container">
+        <div class="faq-left">
+          <h1 class="faq-leftt">FAQs</h1>
+          <p>Can't find the answer you're looking for? Please chat to our friendly team or write us an email at</p>
+          <p class="contact-info"><a href="mailto:for.project.deployment@gmail.com">for.project.deployment@gmail.com</a></p>
+        </div>
+    
+        <div class="faq-right">
+          <div class="faq-question" onclick="toggleAnswer(this)">
+            <h3>How accurate is your disease detection model?</h3>
+            <div class="arrow"></div>
+            <div class="faq-answer">
+                Our model has achieved an accuracy of 99.76% on our test dataset. We are constantly working to improve its performance.
+            </div>
+          </div>
+    
+          <div class="faq-question" onclick="toggleAnswer(this)">
+            <h3>What technology is used for crop identification and disease detection?</h3>
+            <div class="arrow"></div>
+            <div class="faq-answer">
+                We utilize a deep learning model based on the ResNet50 architecture, trained on a large dataset of crop and disease images.
+            </div>
+          </div>
+    
+          <div class="faq-question" onclick="toggleAnswer(this)">
+            <h3>Can I use this for identifying diseases in my garden/farm?</h3>
+            <div class="arrow"></div>
+            <div class="faq-answer">
+                Yes, our tool is designed to assist farmers, gardeners, and researchers in identifying crop diseases.
+            </div>
+          </div>
+    
+          <div class="faq-question" onclick="toggleAnswer(this)">
+            <h3>Can I save or download the analysis results?</h3>
+            <div class="arrow"></div>
+            <div class="faq-answer">
+                Yes, you can download the results as a PDF or text file.                
+            </div>
+          </div>
+    
+          <div class="faq-question" onclick="toggleAnswer(this)">
+            <h3>Is my uploaded image stored on your servers?</h3>
+            <div class="arrow"></div>
+            <div class="faq-answer">
+                We do not store your uploaded images. They are processed and deleted immediately after analysis.
+            </div>
+          </div>
+    
+          <div class="faq-question" onclick="toggleAnswer(this)">
+            <h3>Can I contribute images to improve the model's accuracy?</h3>
+            <div class="arrow"></div>
+            <div class="faq-answer">
+                Yes, we welcome contributions! Please contact us at Email to learn how you can contribute.
+            </div>
+          </div>
+        </div>
+      </div>
+</section>
+
+</body>
+
+<script>
+    const slides = document.querySelectorAll('.slides img');
+    const prevBtn = document.querySelector('.prev-btn');
+    const nextBtn = document.querySelector('.next-btn');
+    const dots = document.querySelectorAll('.dot');
+
+    let currentSlide = 0;
+
+    slides[currentSlide].classList.add('active');
+    dots[currentSlide].classList.add('active');
+
+    prevBtn.addEventListener('click', () => {
+        slides[currentSlide].classList.remove('active');
+        dots[currentSlide].classList.remove('active');
+
+        currentSlide = (currentSlide - 1 + slides.length) % slides.length;
+
+        slides[currentSlide].classList.add('active');
+        dots[currentSlide].classList.add('active');
+    });
+
+    nextBtn.addEventListener('click', () => {
+        slides[currentSlide].classList.remove('active');
+        dots[currentSlide].classList.remove('active');
+
+        currentSlide = (currentSlide + 1) % slides.length;
+
+        slides[currentSlide].classList.add('active');
+        dots[currentSlide].classList.add('active');
+    });
+
+    dots.forEach((dot, index) => {
+        dot.addEventListener('click', () => {
+            slides[currentSlide].classList.remove('active');
+            dots[currentSlide].classList.remove('active');
+
+            currentSlide = index;
+
+            slides[currentSlide].classList.add('active');
+            dots[currentSlide].classList.add('active');
+        });
+    });
+
+
+    function toggleAnswer(element) {
+      element.classList.toggle('open');
+      const answer = element.querySelector('.faq-answer');
+      answer.classList.toggle('open');
+    }
+
+</script>
+</html>
+
+
+

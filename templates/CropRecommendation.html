@@ -1,0 +1,375 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CropFix - Crop Suggestions</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Genos:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Anton+SC&family=Genos:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            color: white;
+            background-color: #000;
+        }
+
+        .feedback-form-container{
+    display: flex;
+    width: 80%;
+    margin: 50px auto;
+    /* border: 1px solid #ccc; */
+    padding: 20px;
+}
+
+.feedbacktxtbox{
+    flex: 1;
+    padding: 20px;
+    /* background-color: #f0f0f0; */
+}
+
+
+.feedbacktxtbox h2{
+            /* font-family: Arial, Helvetica, sans-serif; */
+            font-family: "Anton SC", sans-serif;
+            font-weight: 400;
+            font-size: 6vw;
+            /* font-weight: 400; */
+            /* font-weight: bold; */
+            line-height: 100%;
+            margin-left: 5vw;
+            text-align: right;
+            /* display: inline; */
+        }
+
+        .feedbacktxtbox p{
+            font-family: "inter", sans-serif;
+            position: relative;
+            top: -50px;
+            text-align: right;
+
+            padding-left: 5vw;
+            font-size: 25px;
+            line-height: 100%;
+        }
+
+        .vertical-line{
+            position: relative;
+            top: 50px;
+            left: 20px;
+            width: 0.2%;
+            height: 650px;
+            background-color: #D6CFE1;
+        }
+
+.feedback-form{
+    display: flex;
+    flex-wrap: wrap;
+    position: relative;
+    width: 100%;
+    top: 50px;
+    flex: 1;
+    padding: 20px;
+}
+
+
+
+.form {
+    display: flex;
+    flex-wrap: wrap;
+    width: 540px;
+    /* height: 440px; */
+    /* background: #e6e6e6; */
+    border-radius: 8px;
+    /* box-shadow: 0 0 40px -10px #000; */
+    /* margin: calc(50vh - 220px) auto; */
+    padding: 20px 30px;
+    /* max-width: calc(100vw - 40px); */
+    box-sizing: border-box;
+    /* font-family: "Montserrat", sans-serif; */
+    position: relative;
+}
+
+.form input {
+    width: 100%;
+    padding: 10px;
+    box-sizing: border-box;
+    background: none;
+    outline: none;
+    resize: none;
+    border: 0;
+    color: white;
+    /* font-family: "Montserrat", sans-serif; */
+    transition: all 0.3s;
+    border-bottom: 2px solid #bebed2;
+}
+.form input:focus {
+    border-bottom: 2px solid #8a8ab8;
+}
+
+.form label{
+font-family: "Anton SC", sans-serif;
+
+}
+
+.form p:before {
+  content: attr(type);
+  display: block;
+  margin: 28px 0 0;
+  font-size: 20px;
+  color: #ffffff;
+}
+
+
+.state{
+    font-family: "Anton SC", sans-serif;
+    position: relative;
+    top: 10px;
+    left: -10px;
+    width: 50%;
+    height: 50px;
+    margin: 10px;
+    border: 2px solid black;
+    background-color: white;
+    border-radius: 20px;
+
+}
+
+
+
+.city{
+    font-family: "Anton SC", sans-serif;
+    position: relative;
+    top: 10px;
+    left: -10px;
+    width: 40%;
+    height: 50px;
+    margin: 10px;
+    border: 2px solid black;
+    background-color: white;
+    border-radius: 20px;
+
+}
+
+
+  .button-50 {
+      position: relative;
+      left: -230px;
+      top: -145px;
+  appearance: button;
+  background-color: white;
+  background-image: none;
+  border: 1px solid #000;
+  border-radius: 4px;
+  box-shadow: #fff 4px 4px 0 0,#000 4px 4px 0 1px;
+  box-sizing: border-box;
+  color: #000000;
+  cursor: pointer;
+  display: inline-block;
+  font-family: ITCAvantGardeStd-Bk,Arial,sans-serif;
+  font-family: "Anton SC", sans-serif;
+  font-size: 25px;
+  font-weight: 400;
+  line-height: 20px;
+  margin: 0 5px 10px 0;
+  overflow: visible;
+  padding: 12px 40px;
+  text-align: center;
+  text-transform: none;
+  touch-action: manipulation;
+  user-select: none;
+  -webkit-user-select: none;
+  vertical-align: middle;
+  white-space: nowrap;
+}
+
+.button-50:focus {
+  text-decoration: none;
+}
+
+.button-50:hover {
+  text-decoration: none;
+}
+
+.button-50:active {
+  box-shadow: rgba(0, 0, 0, .125) 0 3px 5px inset;
+  outline: 0;
+}
+
+.button-50:not([disabled]):active {
+  box-shadow: #fff 2px 2px 0 0, #000 2px 2px 0 1px;
+  transform: translate(2px, 2px);
+}
+
+
+    </style>
+</head>
+<body>
+    <section class="main-section">
+            <div class="feedback-form-container">
+                <div class="feedbacktxtbox">
+                  <h2>Crop suggestion!</h2>
+                  <p>"Maximize your yield with our AI-powered crop suggestions, tailored to your soil and climate for optimal growth."</p>
+                  <!-- <p>Feel free to let us know about your experience, any features you'd like to see, or anything else you think we should know.</p> -->
+                </div>
+                <div class="vertical-line"></div>
+        
+                <div class="feedback-form">
+                        <form method="POST" action="{{ url_for('crop_prediction') }}" class="form">
+                            <div class="form-group">
+                                <label for="Nitrogen" style="font-size: 2vw">Nitrogen</b></label>
+                                <input
+                                  type="number"
+                                  class="form-control"
+                                  id="Nitrogen"
+                                  name="nitrogen"
+                                  placeholder="Enter the value (example:50)"
+                                  style="font-weight: bold"
+                                  required
+                                />
+                              </div>
+                              <div class="form-group">
+                                <label for="Phosphorous" style="font-size: 2vw"
+                                  >Phosphorous</label
+                                >
+                                <input
+                                  type="number"
+                                  class="form-control"
+                                  id="Phosphorous"
+                                  name="phosphorous"
+                                  placeholder="Enter the value (example:50)"
+                                  style="font-weight: bold"
+                                  required
+                                />
+                              </div>
+                          
+                              <div class="form-group">
+                                <label for="Pottasium" style="font-size: 2vw">Pottasium</b></label>
+                                <input
+                                  type="number"
+                                  class="form-control"
+                                  id="Pottasium"
+                                  name="pottasium"
+                                  placeholder="Enter the value (example:50)"
+                                  style="font-weight: bold"
+                                  required
+                                />
+                              </div>
+                              <div class="form-group">
+                                <label for="ph" style="font-size: 2vw">ph level</b></label>
+                                <input
+                                  type="number"
+                                  step="0.01"
+                                  class="form-control"
+                                  id="ph"
+                                  name="ph"
+                                  placeholder="Enter the value"
+                                  style="font-weight: bold"
+                                  required
+                                />
+                              </div>
+                              <div class="form-group">
+                                <label for="Rainfall" style="font-size: 2vw">Rainfall (in mm)</b></label>
+                                <input
+                                  type="number"
+                                  step="0.01"
+                                  class="form-control"
+                                  id="Rainfall"
+                                  name="rainfall"
+                                  placeholder="Enter the value"
+                                  style="font-weight: bold"
+                                  required
+                                />
+                              </div> 
+                              <br>        
+                              <label for="state"></label>
+                              <select class="state" id="state" name="state" onchange="changeCity(this.value)">
+                                  <option value="">Select State</option>
+                                  <option value="Andhra Pradesh">Andhra Pradesh</option>
+                                  <option value="Arunachal Pradesh">Arunachal Pradesh</option>
+                                  <option value="Assam">Assam</option>
+                                  <option value="Bihar">Bihar</option>
+                                  <option value="Chhattisgarh">Chhattisgarh</option>
+                                  <option value="Delhi">Delhi</option>
+                                  <option value="Gujarat">Gujarat</option>
+                                  <option value="Haryana">Haryana</option>
+                                  <option value="Himachal Pradesh">Himachal Pradesh</option>
+                                  <option value="Jammu and Kashmir">Jammu and Kashmir</option>
+                                  <option value="Madhya Pradesh">Madhya Pradesh</option>
+                                  <option value="Maharashtra">Maharashtra</option>
+                                  <option value="Odisha">Odisha</option>
+                                  <option value="Punjab">Punjab</option>
+                                  <option value="Rajasthan">Rajasthan</option>
+                                  <option value="Uttar Pradesh">Uttar Pradesh</option>
+                                  <option value="Uttarakhand">Uttarakhand</option>
+                                </select>
+                                <label for="city"></label>
+                                <select class="city" id="city" type="text" name="city" placeholder="City..">
+                                    <option value="">Select City</option>
+                                </select> 
+                                <br><br>
+                            <button class="button-50" role="button" type="submit">Submit</button>
+                          </form>
+                      </form>
+              </div>
+        </div>
+        <!-- <h1>Crop Recommendation</h1> -->
+    </section>
+
+
+
+    <script>
+      function changeCity(state) {
+          var city = document.getElementById("city");
+          city.innerHTML = "";
+          if (state == "Andhra Pradesh") {
+              var cities = ["Visakhapatnam", "Vijayawada", "Tirupati", "Guntur", "Nellore"];
+          } else if (state == "Arunachal Pradesh") {
+              var cities = ["Itanagar", "Tawang", "Bomdila", "Ziro", "Pasighat"];
+          } else if (state == "Assam") {
+              var cities = ["Guwahati", "Silchar", "Dibrugarh", "Jorhat", "Nagaon"];
+          } else if (state == "Bihar") {
+              var cities = ["Patna", "Gaya", "Bhagalpur", "Muzaffarpur", "Darbhanga"];
+          } else if (state == "Chhattisgarh") {
+              var cities = ["Raipur", "Bilaspur", "Durg", "Rajnandgaon", "Korba"];
+          } else if (state === "Delhi") {
+              var cities = ["New Delhi", "Old Delhi", "South Delhi", "North Delhi", "East Delhi", "West Delhi", "Central Delhi", "Dwarka", "Rohini", "Greater Kailash", "Connaught Place", "Chandni Chowk", "Karol Bagh", "Hauz Khas", "Laxmi Nagar", "Pitampura", "Vasant Kunj", "Saket", "Rajouri Garden", "Punjabi Bagh"];
+          } else if (state == "Gujarat") {
+              var cities = ["Gandhinagar", "Ahmedabad", "Surat", "Vadodara", "Rajkot"];
+          } else if (state == "Haryana") {
+              var cities = ["Chandigarh", "Faridabad", "Gurgaon", "Rohtak", "Hisar"];
+          } else if (state == "Himachal Pradesh") {
+              var cities = ["Shimla", "Dharamshala", "Solan", "Mandi", "Kullu"];
+          } else if (state == "Jammu and Kashmir") {
+              var cities = ["Srinagar", "Jammu", "Anantnag", "Baramulla", "Pulwama"];
+          } else if (state == "Madhya Pradesh") {
+              var cities = ["Bhopal", "Indore", "Jabalpur", "Gwalior", "Ujjain"];
+          } else if (state == "Maharashtra") {
+              var cities = ["Mumbai", "Pune", "Nagpur", "Thane", "Nashik"];
+          } else if (state == "Odisha") {
+              var cities = ["Bhubaneswar", "Cuttack", "Rourkela", "Brahmapur", "Sambalpur"];
+          } else if (state == "Punjab") {
+              var cities = ["Chandigarh", "Ludhiana", "Amritsar", "Jalandhar", "Patiala"];
+          } else if (state == "Rajasthan") {
+              var cities = ["Jaipur", "Jodhpur", "Kota", "Bikaner", "Udaipur"];
+          } else if (state == "Uttar Pradesh") {
+              var cities = ["Lucknow", "Kanpur", "Ghaziabad", "Agra", "Varanasi"];
+          } else if (state == "Uttarakhand") {
+              var cities = ["Dehradun", "Haridwar", "Haldwani", "Roorkee", "Rishikesh"];
+          }
+          for (var i = 0; i < cities.length; i++) {
+              var option = document.createElement("option");
+              option.value = cities[i];
+              option.text = cities[i];
+              city.add(option);
+          }
+      }
+  </script>
+    
+</body>
+</html>

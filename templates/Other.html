@@ -1,0 +1,288 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>CropFix</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Genos:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Anton+SC&family=Genos:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+  <style>
+
+body{
+  margin: 0;
+  padding: 0;
+  color: white;
+}
+
+
+.navbar {
+  /* background-color: #333; */
+  font-family: "Anton SC", sans-serif;
+  overflow: hidden;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px 50px;
+}
+
+.navbar-left {
+  color: rgb(0, 0, 0);
+  font-size: 2vw;
+  font-weight: bold;
+}
+
+.navbar-right {
+  display: flex;
+}
+
+.navbar-right a {
+  color: rgb(0, 0, 0);
+  text-decoration: none;
+  padding: 10px 15px;
+  font-size: 1.2vw;
+}
+
+.navbar-right a:hover {
+  background-color: #000000;
+  color: white;
+  border-radius: 10px;
+}
+
+.mid-container{
+  background-color: #000000;
+  overflow: hidden;
+  width: 70%;
+  height: 700px;
+  position: relative;
+  top: 80px;
+  left: 15%;
+  border-radius: 100px;
+}
+
+
+.sww{
+  position: absolute;
+  right: -100px;
+  height: 500px;
+}
+
+
+h1{
+  font-family: "Anton SC", sans-serif;
+  font-size: 7vw;
+  display: inline;
+  position: relative;
+  left: 50px;
+  top: 50px;
+  
+}
+
+.heading2{
+  position: relative;
+  top: -40px;
+  font-family: "Anton SC", sans-serif;
+  font-size: 3vw;
+  display: block;
+}
+
+
+p{
+  position: relative;
+  top: -50px;
+  left: 100px;
+  font-family: "inter", sans-serif;
+  font-size: 25px;
+  text-align: justify;
+  /* background-color: aqua; */
+  width: 50%;
+}
+
+
+
+
+
+.custum-file-upload {
+  height: 20px;
+  width: 150px;
+  display: flex;
+  flex-direction: column;
+  align-items: space-between;
+  gap: 20px;
+  cursor: pointer;
+  align-items: center;
+  justify-content: center;
+  /* border: 2px dashed #cacaca; */
+  /* background-color: rgb(0, 0, 0); */
+  /* color: #007bff; */
+  padding: 1.5rem;
+  border-radius: 10px;
+  /* box-shadow: 0px 48px 35px -48px rgba(0,0,0,0.1); */
+}
+
+.custum-file-upload .text {
+    position: relative;
+    top: 20px;
+    left: 130px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  appearance: button;
+  background-color: #ffffff;
+  background-image: none;
+  border: 1px solid #000;
+  border-radius: 4px;
+  box-shadow: #fff 4px 4px 0 0,#000 4px 4px 0 1px;
+  box-sizing: border-box;
+  color: #000000;
+  cursor: pointer;
+  display: inline-block;
+  font-family: ITCAvantGardeStd-Bk,Arial,sans-serif;
+  font-family: "Anton SC", sans-serif;
+  font-size: 25px;
+  font-weight: 400;
+  line-height: 20px;
+  margin: 0 5px 10px 0;
+  overflow: visible;
+  padding: 12px 40px;
+  text-align: center;
+  text-transform: none;
+  touch-action: manipulation;
+  user-select: none;
+  -webkit-user-select: none;
+  vertical-align: middle;
+  white-space: nowrap;
+}
+
+.custum-file-upload .text span {
+  font-weight: 400;
+  color: rgb(0, 0, 0);
+}
+
+
+.custum-file-upload input {
+  display: none;
+}
+
+.custum-file-upload .text:focus {
+  text-decoration: none;
+}
+
+.custum-file-upload .text:hover {
+  text-decoration: none;
+}
+
+.custum-file-upload .text:active {
+  box-shadow: rgba(0, 0, 0, .125) 0 3px 5px inset;
+  outline: 0;
+}
+
+.custum-file-upload .text:not([disabled]):active {
+  box-shadow: #fff 2px 2px 0 0, #000 2px 2px 0 1px;
+  transform: translate(2px, 2px);
+}
+
+
+.UAA {
+      position: relative;
+      left: 400px;
+      top: -42px;
+  appearance: button;
+  background-color: #ffffff;
+  background-image: none;
+  border: 1px solid #000;
+  border-radius: 4px;
+  box-shadow: #fff 4px 4px 0 0,#000 4px 4px 0 1px;
+  box-sizing: border-box;
+  color: #000000;
+  cursor: pointer;
+  display: inline-block;
+  font-family: ITCAvantGardeStd-Bk,Arial,sans-serif;
+  font-family: "Anton SC", sans-serif;
+  font-size: 25px;
+  font-weight: 400;
+  line-height: 20px;
+  margin: 0 5px 10px 0;
+  overflow: visible;
+  padding: 12px 40px;
+  text-align: center;
+  text-transform: none;
+  touch-action: manipulation;
+  user-select: none;
+  -webkit-user-select: none;
+  vertical-align: middle;
+  white-space: nowrap;
+}
+
+.UAA:focus {
+  text-decoration: none;
+}
+
+.UAA:hover {
+  text-decoration: none;
+}
+
+.UAA:active {
+  box-shadow: rgba(0, 0, 0, .125) 0 3px 5px inset;
+  outline: 0;
+}
+
+.UAA:not([disabled]):active {
+  box-shadow: #fff 2px 2px 0 0, #000 2px 2px 0 1px;
+  transform: translate(2px, 2px);
+}
+
+
+  </style>
+</head>
+<body>
+  <div class="navbar">
+    <div class="navbar-left">CropFix</div>
+    <div class="navbar-right">
+        <a href="/">Home</a>
+        <a href="/Crop-rcmd">Crop suggestion</a>
+        <a href="/CIDD_input">Crop Diseases Diagnosis</a>
+        <a href="/CIDDL_input">LIME Explanation</a>
+    </div>
+</div>
+<section class="mid-container">
+  <div class="container">
+    <div>
+        <img class="sww" src="/static/Images/Other/oimg.png" alt="">
+    </div>
+
+    </div>
+     
+
+        
+        <h1>Oops!</h1>
+        <h1 class="heading2">Something went wrong</h1>
+        
+        <div class="parabox">
+            <p>It looks like you are trying to upload image that does not related to crop</p>
+            <p>To fix this issue, please upload a new image that is related to crop</p>
+
+        </div>
+
+        <div class="container4">
+
+          <form action="/uploadandanalysis" method="POST" enctype="multipart/form-data">
+                
+            <label class="custum-file-upload" for="file">
+                <div class="text">
+                    <span>Choose another Image</span>
+                </div>
+                <input type="file" id="file" name="file" accept="image/*" required>
+            </label>
+            <button class="UAA" role="button" type="submit">Diagnosis</button>
+        </form>
+
+</section>
+
+
+</body>
+</html>
