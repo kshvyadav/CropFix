@@ -57,7 +57,7 @@ def CIDDL_input():
 
 def weather_fetch(city_name):
     
-    api_key = "c127a9db9412175ae1101104ce0ffe05"
+    api_key = "USE_YOUR_API_KEY"
     base_url = "http://api.openweathermap.org/data/2.5/weather?"
 
     complete_url = base_url + "appid=" + api_key + "&q=" + city_name
