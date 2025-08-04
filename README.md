@@ -2,7 +2,7 @@
 
 CropFix is an intelligent web platform designed to empower farmers and agricultural practitioners with data-driven insights. It provides a suite of advanced tools for crop identification, disease detection, and crop recommendation, all through an intuitive and user-friendly interface. By integrating state-of-the-art machine learning and interpretable AI, CropFix delivers not only accurate results but also understandable explanations, fostering user trust and facilitating informed action.
 
-![CropFix Logo]([img/logo.png](https://github.com/kshvyadav/CropFix/blob/adb909fe41f7f06958ec4e196c5857333c4440aa/static/Images/Other/Screenshot%202025-06-26%20154111.png)) 
+![CropFix Logo](https://github.com/kshvyadav/CropFix/blob/adb909fe41f7f06958ec4e196c5857333c4440aa/static/Images/Other/Screenshot%202025-06-26%20154111.png)
 
 ## ✨ Core Functionalities
 
@@ -25,7 +25,7 @@ This module is the central pillar of CropFix, enabling users to identify both cr
     - **Disease Detection:** If visual patterns of a disease are found, the specific disease is identified.
     - **Cure Explanation:** Preliminary guidance on how to prevent or manage the identified disease, including common agricultural practices or treatments.
 
-![Crop Identification and Disease Detection]([img/crop_id_input.png](https://github.com/kshvyadav/CropFix/blob/adb909fe41f7f06958ec4e196c5857333c4440aa/static/Images/Other/Screenshot%202025-04-09%20140149.png))
+![Crop Identification and Disease Detection](https://github.com/kshvyadav/CropFix/blob/adb909fe41f7f06958ec4e196c5857333c4440aa/static/Images/Other/Screenshot%202025-04-09%20140149.png)
 
 ![Crop Identification and Disease Detection](https://github.com/kshvyadav/CropFix/blob/adb909fe41f7f06958ec4e196c5857333c4440aa/static/Images/Other/Screenshot%202025-04-09%20142009.png)
 
@@ -37,7 +37,7 @@ Understanding the reasoning behind a disease diagnosis is crucial for user trust
 - **Process:** LIME generates slightly modified versions of the input image and observes how the prediction changes. By analyzing these changes, LIME highlights the specific regions or visual features in the image that were most significant for the prediction.
 - **Output:** The system provides a visual explanation, highlighting areas on the leaf or stem (e.g., discoloration patterns) that contributed most significantly to the disease prediction.
 
-![LIME Explanation]([img/lime_output.png](https://github.com/kshvyadav/CropFix/blob/adb909fe41f7f06958ec4e196c5857333c4440aa/static/Images/Other/Screenshot%202025-04-09%20141445.png))
+![LIME Explanation](https://github.com/kshvyadav/CropFix/blob/adb909fe41f7f06958ec4e196c5857333c4440aa/static/Images/Other/Screenshot%202025-04-09%20141445.png)
 
 ### 3. Intelligent Crop Recommendation System
 
@@ -47,7 +47,7 @@ This module assists users in making informed decisions about crop selection base
 - **Process:** When a user inputs parameters like soil pH, Nitrogen (N) content, Phosphorus (P) content, Potassium (K) content, and Temperature, the trained Random Forest model processes this data.
 - **Output:** The system generates a ranked list of potential crop suggestions based on the provided conditions.
 
-![Crop Recommendation]([img/crop_recommendation_input.png](https://github.com/kshvyadav/CropFix/blob/adb909fe41f7f06958ec4e196c5857333c4440aa/static/Images/Other/Screenshot%202025-04-09%20140218.png))
+![Crop Recommendation](https://github.com/kshvyadav/CropFix/blob/adb909fe41f7f06958ec4e196c5857333c4440aa/static/Images/Other/Screenshot%202025-04-09%20140218.png)
 
 ![Crop Recommendation](https://github.com/kshvyadav/CropFix/blob/adb909fe41f7f06958ec4e196c5857333c4440aa/static/Images/Other/Screenshot%202025-04-09%20155515.png)
 
